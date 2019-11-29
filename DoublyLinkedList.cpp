@@ -8,7 +8,9 @@ Last updated:
 
 #include <string>
 #include <iostream>
+#include "Node.h"
 #include "DoublyLinkedList.h"
+#include "Complex.h"
 
 /**
  * Default constructor for DoublyLinkedLists.
@@ -28,15 +30,17 @@ DoublyLinkedList<T>::DoublyLinkedList() {
  */
 template<class T>
 void DoublyLinkedList<T>::addFront(T d) {
-    Node<T> newNode(d);
-
+    Node<T>* newNode = new Node<T>;
+    newNode->data = d;
+    newNode->prev = nullptr;
+    newNode->next = nullptr;
     if (this->size == 0) // check if list is empty
     {
         tail = newNode; // tail equal new node with our new data
     }
     else  // if not empty
     {
-        newNode.next = this->head;
+        newNode->next = this->head;
         head->prev = newNode; // head.prev = new node with new data
     }
 
@@ -58,6 +62,7 @@ void DoublyLinkedList<T>::popFront() {
         if (size > 1)
         { // if there are many elements, just remove front
             head = head->next;
+            head->prev = nullptr;
         }
         else
         {
@@ -78,16 +83,18 @@ template<class T>
 void DoublyLinkedList<T>::addBack(T d) {
     if (size > 0)
     {
-        Node<T>* newTail = new Node<T>(d);
+        Node<T>* newTail = new Node<T>;
+        newTail->data = d;
+        newTail->next = nullptr;
         newTail->prev = tail;
         tail->next = newTail;
         tail = newTail;
-        // fixme: should I set the next* pointer of the new tail to null???
     }
     else
     {
         this->addFront(d);
     }
+    size++;
 }
 
 /**
@@ -98,11 +105,11 @@ template<class T>
 void DoublyLinkedList<T>::popBack() {
     if (size > 0)
     { // check list isn't empty
-        Node<T>* toRemove = tail; // fixme: deallocate???
+        Node<T>* toRemove = tail;
         if (size > 1)
         { // if there are many elements, just remove back
             tail = tail->prev;
-            *tail->next = nullptr;
+            tail->next = nullptr;
         }
         else
         { // if only one element, list is empty
@@ -199,4 +206,6 @@ void DoublyLinkedList<T>::displayList() const {
     }
 }
 
+template class DoublyLinkedList<int>;
+template class DoublyLinkedList<Complex>;
 

@@ -11,7 +11,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c5fd4d0-4153-498e-acaf-31748698e52c" name="Default Changelist" comment="" />
+    <list default="true" id="4c5fd4d0-4153-498e-acaf-31748698e52c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StackDoublyLinkedList.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StackDoublyLinkedList.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Complex.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Complex.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Complex.h" beforeDir="false" afterPath="$PROJECT_DIR$/Complex.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoublyLinkedList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DoublyLinkedList.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoublyLinkedList.h" beforeDir="false" afterPath="$PROJECT_DIR$/DoublyLinkedList.h" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +31,14 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectId" id="1TXkP5Hyii4Q0hYOgmDv9CXFxlq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -69,19 +84,43 @@
       <workItem from="1574372404056" duration="1594000" />
       <workItem from="1574384123613" duration="3720000" />
       <workItem from="1574456834193" duration="3065000" />
+      <workItem from="1574461254977" duration="4287000" />
+      <workItem from="1574619308253" duration="489000" />
+      <workItem from="1574660042081" duration="710000" />
+      <workItem from="1574706148873" duration="354000" />
+      <workItem from="1574711502050" duration="84000" />
+      <workItem from="1574895238945" duration="4374000" />
+      <workItem from="1574904991682" duration="2008000" />
+      <workItem from="1574921412355" duration="2405000" />
+      <workItem from="1574983933284" duration="6732000" />
+      <workItem from="1575062274177" duration="30000" />
+      <workItem from="1575062698000" duration="7000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>38</line>
-          <option name="timeStamp" value="7" />
+          <line>112</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

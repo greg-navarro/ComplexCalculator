@@ -8,6 +8,7 @@ Last updated:
 
 #include "Complex.h"
 #include <cmath>
+#include <iostream>
 
 /**
  * Default constructor for Complex number objects
@@ -51,7 +52,7 @@ string Complex::toString() const
 { // TODO finish commenting
     string output; // FIXME: to_string the values, and add negative signs in the string phase
     if (im >= 0 && dem > 0)
-        output = "[" + to_string(re) + " + " + to_string(im)  + "i]/" + to_string(dem);
+        output = "[" + to_string(re) + "+" + to_string(im)  + "i]/" + to_string(dem);
     else if (im < 0 && dem > 0)
         output = "[" + to_string(re) + to_string(im)  + "i]/" + to_string(dem);
     else if (im >= 0 && dem < 0)
@@ -94,8 +95,8 @@ Complex operator+(Complex a, Complex b)
     }
     else
     {
-        sum.re = ( operandTwo.dem * operandOne.re + operandTwo.dem * operandOne.re );
-        sum.im = ( operandTwo.dem * operandOne.im + operandTwo.dem * operandOne.im );
+        sum.re = ( operandTwo.dem * operandOne.re + operandOne.dem * operandTwo.re );
+        sum.im = ( operandTwo.dem * operandOne.im + operandOne.dem * operandTwo.im );
         sum.dem = operandOne.dem * operandTwo.dem;
     }
 
@@ -109,7 +110,7 @@ Complex operator+(Complex a, Complex b)
         sum.dem /= common_factors3;
     }
 
-    return sum;
+    return Complex(sum.re, sum.im, sum.dem); // constructor call handles negative value formatting
 }
 
 /**
@@ -129,7 +130,7 @@ Complex operator-(Complex a, Complex b)
         operandOne.im *= -1;
         operandOne.dem *= -1;
     }
-    else if (b.dem < 0) {
+    if (b.dem < 0) {
         operandTwo.re *= -1;
         operandTwo.im *= -1;
         operandTwo.dem *= -1;
@@ -143,8 +144,8 @@ Complex operator-(Complex a, Complex b)
     }
     else
     {
-        difference.re = ( operandTwo.dem * operandOne.re - operandTwo.dem * operandOne.re );
-        difference.im = ( operandTwo.dem * operandOne.im - operandTwo.dem * operandOne.im );
+        difference.re = ( operandTwo.dem * operandOne.re - operandOne.dem * operandTwo.re );
+        difference.im = ( operandTwo.dem * operandOne.im - operandOne.dem * operandTwo.im );
         difference.dem = operandOne.dem * operandTwo.dem;
     }
 
@@ -200,7 +201,7 @@ Complex operator*(Complex a, Complex b)
         product.dem /= common_factors3;
     }
 
-    return product;
+    return Complex(product.re, product.im, product.dem);
 }
 
 /**
@@ -242,7 +243,24 @@ Complex operator/(Complex a, Complex b)
         quotient.dem /= common_factors3;
     }
 
-    return quotient;
+    return Complex(quotient.re, quotient.im, quotient.dem);
+}
+
+/**
+ *
+ * @param a
+ * @param b
+ * @return
+ */
+bool operator== (Complex a, Complex b) {
+    if (a.re == b.re)
+    {
+        if (a.im == b.im) {
+            if (a.dem == b.dem)
+                return true;
+        }
+    }
+    return false;
 }
 
 /**
@@ -251,11 +269,12 @@ Complex operator/(Complex a, Complex b)
  * @param a
  * @return
  */
-//ostream& operator<< (ostream& stream, Complex a)
-// {
-//    stream << a.toString();
-//    return stream;
-//}
+ostream& operator<< (ostream& stream, Complex a)
+ {
+    string message = a.toString();
+    stream << message;
+    return stream;
+}
 
 /**
  * TODO comment gcd

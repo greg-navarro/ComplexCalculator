@@ -35,7 +35,8 @@ Complex operator+(Complex a, Complex b);
 Complex operator-(Complex a, Complex b);
 Complex operator*(Complex a, Complex b);
 Complex operator/(Complex a, Complex b);
-//ostream& operator<< (ostream& stream, Complex a); // FIXME: CLION says this is not valid for x86 architecture =>>> linker fails
+bool operator== (Complex a, Complex b);
+ostream& operator<< (ostream& stream, Complex a); // FIXME: CLION says this is not valid for x86 architecture =>>> linker fails
 //Find gcd and lcm to reduce fraction and add fraction
 int gcd(int a, int b);
 int lcm(int a, int b);
